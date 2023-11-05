@@ -1,0 +1,15 @@
+- title: Home
+  url: /
+  file: /
+- title: Services
+  url: /service
+  file: /service.html
+- title: Gallery
+  url: /gallery
+  file: /gallery.html
+- title: Our Team
+  url: /team
+  file: /team.html
+- title: Contact
+  url: /contact
+  file: /contact.html

@@ -1,0 +1,35 @@
+<section class="video-one">
+    <div class="video-one__bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+        style="background-image: url(assets/images/backgrounds/video-one-bg.jpg);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="video-one__left">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">What else we do</span>
+                        <h2 class="section-title__title">Get An Incredible Spa
+                            Experience with Mellis
+                            Spa Center</h2>
+                    </div>
+                    <div class="video-one__video-link">
+                        <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                            <div class="video-one__video-icon">
+                                <span class="fa fa-play"></span>
+                                <i class="ripple"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="video-one__right">
+                    <ul class="video-one__points list-unstyled">
+                        {% for text in site.data.feature %}
+                        <li><div class="icon"><span class="fa fa-check"></span></div><p class="text">{{ text.feature }}</p></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

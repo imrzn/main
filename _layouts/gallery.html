@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% include hero-all.html %}
+
+<section class="gallery-page">
+    <div class="container">
+        <div class="row">
+            {% for img in site.data.gallery %}
+            <div class="col-md-6">
+                <div class="gallery-page__single">
+                    <div class="gallery-page__img">
+                        <img src="{{ img.thumb }}" alt="">
+                        <div class="gallery-page__icon">
+                            <a class="img-popup" href="{{ img.full }}"><span class="fa fa-plus"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
