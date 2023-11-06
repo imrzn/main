@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.title }}</h1>
+    <form id="editForm" action="#">
+        <label for="newContent">Existing and New Content:</label>
+        <textarea id="content" rows="10" cols="80" required></textarea>
+        <br>
+        <button type="button" onclick="submitContent()">Submit</button>
+    </form>
+    <p id="successMessage" style="display: none; color: green;">Content updated successfully!</p>
+
+    <script>
+        const username = 'rzwan102';
+        const repo = 'main';
+        const token = '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';
+
+        async function populateContentAndSHA() {
+            // Fetch the file information to get the content and SHA in a single request
+            const fileResponse = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/index.html`);
+            const fileData = await fileResponse.json();
+            const existingContent = atob(fileData.content); // Decode the Base64 content
+            const currentSHA = fileData.sha;
+
+            // Populate the content (both existing and new) in the textarea
+            document.getElementById("content").value = existingContent;
+
+            // Store the current SHA for use in the update request
+            document.getElementById("content").setAttribute("data-sha", currentSHA);
+        }
+
+        populateContentAndSHA(); // Call this function to populate content and SHA on page load
+
+        async function submitContent() {
+            const contentTextarea = document.getElementById("content");
+            const newContent = contentTextarea.value;
+            const currentSHA = contentTextarea.getAttribute("data-sha");
+
+            // Use the stored SHA in the update request
+            const response = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/index.html`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`
+                },
+                body: JSON.stringify({
+                    message: 'Update index.html',
+                    content: btoa(newContent), // Base64 encode the content
+                    sha: currentSHA
+                })
+            });
+
+            if (response.status === 200) {
+                document.getElementById("successMessage").style.display = "block";
+            } else {
+                console.error('Failed to update content.');
+            }
+        }
+    </script>
+</body>
+</html>
