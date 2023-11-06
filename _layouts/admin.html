@@ -29,7 +29,7 @@
 
         async function populateContentAndSHA() {
             // Fetch the file information to get the content and SHA in a single request
-            const fileResponse = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/index.html`);
+            const fileResponse = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/_data/slider.yml`);
             const fileData = await fileResponse.json();
             const existingContent = atob(fileData.content); // Decode the Base64 content
             const currentSHA = fileData.sha;
