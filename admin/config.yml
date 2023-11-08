@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: imrzn/main
+  branch: main # Use the branch you prefer
+
+media_folder: "images/uploads" # Location for uploaded media files
+public_folder: "/images/uploads" # URL for uploaded media files
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "_data"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
