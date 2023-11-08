@@ -1,4 +1,4 @@
 ---
-layout: admin
+layout: edit
 title: Admin
 ---
