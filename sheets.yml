@@ -1,0 +1,9 @@
+- spreadsheet_id: '1Op4boRwOTuWrGCR5SKGQ2QmbOzLhrIdR4qXl4WbpnXw'
+  sheets:
+    - sheet_name: 'home-slider'
+    - sheet_name: 'features'
+    - sheet_name: 'gallery'
+    - sheet_name: 'reviews'
+    - sheet_name: 'brands-icon'
+    - sheet_name: 'team-members'
+    - sheet_name: 'services'
