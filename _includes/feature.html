@@ -1,6 +1,6 @@
 <section class="video-one">
     <div class="video-one__bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-        style="background-image: url(assets/images/backgrounds/video-one-bg.jpg);"></div>
+        style="background-image: url(https://ik.imagekit.io/imrzn/bsln/assets/video-one-bg.jpg);"></div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
@@ -24,8 +24,8 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="video-one__right">
                     <ul class="video-one__points list-unstyled">
-                        {% for text in site.data.feature %}
-                        <li><div class="icon"><span class="fa fa-check"></span></div><p class="text">{{ text.feature }}</p></li>
+                        {% for text in site.data.features %}
+                        <li><div class="icon"><span class="fa fa-check"></span></div><p class="text">{{ text[0] }}</p></li>
                         {% endfor %}
                     </ul>
                 </div>

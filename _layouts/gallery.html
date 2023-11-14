@@ -6,13 +6,13 @@ layout: default
 <section class="gallery-page">
     <div class="container">
         <div class="row">
-            {% for img in site.data.gallery %}
+            {% for item in site.data.gallery %}
             <div class="col-md-6">
                 <div class="gallery-page__single">
                     <div class="gallery-page__img">
-                        <img src="{{ img.thumb }}" alt="">
+                        <img src="{{ item[0] }}" alt="">
                         <div class="gallery-page__icon">
-                            <a class="img-popup" href="{{ img.full }}"><span class="fa fa-plus"></span></a>
+                            <a class="img-popup" href="{{ item[0] }}"><span class="fa fa-plus"></span></a>
                         </div>
                     </div>
                 </div>

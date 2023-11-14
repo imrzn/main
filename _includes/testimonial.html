@@ -1,7 +1,7 @@
 <section class="testimonial-one">
     <div class="testimonial-one__bg-box">
         <div class="testimonial-one__bg"
-            style="background-image: url(assets/images/backgrounds/testimonial-one-bg.jpg);"></div>
+            style="background-image: url(https://ik.imagekit.io/imrzn/bsln/assets/testimonial-one-bg.jpg);"></div>
     </div>
     <div class="container">
         <div class="testimonial-one__top">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="testimonial-one__right">
-                        <p class="testimonial-one__text">There are many variations of passages of available but
+                        <p class="testimonial-one__text">There are many variation of passages of available but
                             the
                             majority have suffered in form, by injected words which don't look. There are many
                             variations of passages.</p>
@@ -27,20 +27,20 @@
         </div>
         <div class="testimonial-one__bottom">
             <div class="testimonial-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{ "items": 1, "margin": 30, "smartSpeed": 700, "loop":true, "autoplay": 6000, "nav":false, "dots":false, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"], "responsive":{ "0":{ "items":1}, "768":{ "items":2}, "992":{ "items": 2}, "1200":{ "items": 3}}}'>
-                {% for review in site.data.review %}
+                {% for review in site.data.reviews %}
                 <div class="item">
                     <div class="testimonial-one__single">
                         <div class="testimonial-one__single-inner">
                             <div class="testimonial-one__rating">
                                 <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
                             </div>
-                            <p class="testimonial-one__text-2">{{ review.body }}</p>
+                            <p class="testimonial-one__text-2">{{ review[1] }}</p>
                             <div class="testimonial-one__client-info">
                                 <div class="testimonial-one__client-img">
-                                    <img src="assets/images/testimonial/{{ review.img }}" alt="">
+                                    <img src="{{ review[2] }}" alt="">
                                 </div>
                                 <div class="testimonial-one__content">
-                                    <h3 class="testimonial-one__client-name">{{ review.name }}</h3>
+                                    <h3 class="testimonial-one__client-name">{{ review[0] }}</h3>
                                     <p class="testimonial-one__client-sub-title">Customer</p>
                                 </div>
                             </div>
